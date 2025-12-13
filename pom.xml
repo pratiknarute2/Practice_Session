@@ -16,13 +16,6 @@
 
     <dependencies>
 
-        <!-- ⭐ Latest Allure TestNG -->
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-testng</artifactId>
-            <version>2.29.0</version>
-        </dependency>
-
         <!-- Selenium Java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -62,23 +55,6 @@
 
     <build>
         <plugins>
-
-            <!-- ⭐ Updated Allure Maven Plugin -->
-            <plugin>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-maven</artifactId>
-                <version>2.14.0</version>
-                <executions>
-                    <execution>
-                        <id>allure</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>allure</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
             <!-- Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

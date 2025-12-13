@@ -24,14 +24,14 @@ public class ReusableCode extends driverSetup.InitiateDriver{
         }
 
     }
-    public void sendAction(WebElement el, String value, String step){
+    public void sendAction(WebElement el, String value, String step) {
         try {
             WebDriverWait webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
             webDriverWait.until(ExpectedConditions.visibilityOf(el));
             el.sendKeys(value);
-            System.out.println("Fill in: "+step);
-        }catch (TimeoutException timeoutException){
-            Assert.fail("Fail to Fill in: "+step+" | "+timeoutException.getMessage());
+            System.out.println("Fill in: " + step+" | Value: "+value);
+        } catch (TimeoutException timeoutException) {
+            Assert.fail("Fail to Fill in: " + step + " | " + timeoutException.getMessage());
         }
     }
     public boolean isEnabled(WebElement el, String step){
