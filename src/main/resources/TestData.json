@@ -1,0 +1,20 @@
+{
+  "Users": [
+    {
+      "ID": "1",
+      "Full Name": "Sam wai",
+      "Email": "fslkdfjd@gmail.com",
+      "Pass": "23234234",
+      "Mobile No": "8625812462",
+      "SingupPage url": "https://www.naukri.com/registration/createAccount"
+    },
+    {
+      "ID": "2",
+      "Full Name": "Gorge wai",
+      "Email": "fslkdfjd@gmail.com",
+      "Pass": "sdljf@12323",
+      "Mobile No": "8625812462",
+      "SingupPage url": "https://www.naukri.com/registration/createAccount"
+    }
+  ]
+}

@@ -1,15 +1,37 @@
 package utility;
 
-import io.qameta.allure.Step;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import driverSetup.InitiateDriver;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.time.Duration;
+import com.google.gson.*;
 
-public class ReusableCode extends driverSetup.InitiateDriver{
+public class ReusableCode extends InitiateDriver{
+
+    public String getDataFromJson(String valueRequired,String id) throws FileNotFoundException {
+        String path = System.getProperty("user.dir")+ "/src/main/resources/TestData.json";
+        String data = "";
+
+        JsonObject jsonObject = JsonParser.parseReader(new FileReader(path)).getAsJsonObject();
+        JsonArray jsonArray = jsonObject.getAsJsonArray("Users");
+
+        for(JsonElement el : jsonArray){
+            JsonObject user = el.getAsJsonObject();
+            if(user.get("ID").getAsString().contains(id)){ // id =1
+                data =  user.get(valueRequired).getAsString();
+            }
+
+        }
+        return data;
+    }
 
     public void  clickAction(WebElement el, String step){
         try{
